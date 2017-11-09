@@ -1,0 +1,1002 @@
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (122.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (106.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20171109122948)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tweet" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171109122948"]]
+  [1m[35m (97.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-09 12:29:57.286126"], ["updated_at", "2017-11-09 12:29:57.286126"]]
+  [1m[35m (75.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:05:41 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (6.7ms)
+Completed 200 OK in 39ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:06:26 +0100
+Processing by HomeController#index as HTML
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:06:36 +0100
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 1132ms (Views: 1131.3ms)
+
+
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 23ms (Views: 22.2ms)
+
+
+Started POST "/home/index" for 127.0.0.1 at 2017-11-09 14:06:48 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/home/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:09:18 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 3ms
+
+
+  
+SyntaxError (/home/youssef/Bureau/rails-tweet/app/services/send_tweet.rb:20: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/services/send_tweet.rb:20: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:09:23 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 3ms
+
+
+  
+SyntaxError (/home/youssef/Bureau/rails-tweet/app/services/send_tweet.rb:20: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/services/send_tweet.rb:20: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:09:47 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+
+  
+SyntaxError (/home/youssef/Bureau/rails-tweet/app/services/send_tweet.rb:21: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/services/send_tweet.rb:21: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:09:52 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+
+  
+SyntaxError (/home/youssef/Bureau/rails-tweet/app/services/send_tweet.rb:21: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/services/send_tweet.rb:21: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:10:03 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+
+  
+SyntaxError (/home/youssef/Bureau/rails-tweet/app/services/send_tweet.rb:24: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/services/send_tweet.rb:24: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:10:08 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:4:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:10:49 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:4:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:12:24 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:4:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:13:28 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:4:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:17:18 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:4:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:18:20 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:4:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:18:46 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:18:56 +0100
+  
+Processing by HomeController#index as HTML
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+Completed 500 Internal Server Error in 1ms
+
+
+  
+  
+app/services/send_tweet.rb:4:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:4:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:19:15 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:4:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:21:25 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:4:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:22:33 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+
+  
+SyntaxError (/home/youssef/Bureau/rails-tweet/app/services/send_tweet.rb:28: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/services/send_tweet.rb:28: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:22:39 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+
+  
+SyntaxError (/home/youssef/Bureau/rails-tweet/app/services/send_tweet.rb:28: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/services/send_tweet.rb:28: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:22:46 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+
+  
+NoMethodError (undefined method `attr_reader' for #<SendTweet:0x007feb001dd5d8>):
+  
+app/services/send_tweet.rb:6:in `perform'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:24:56 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+
+  
+NoMethodError (undefined method `attr_reader' for #<SendTweet:0x007feb0c7cf908>):
+  
+app/services/send_tweet.rb:6:in `perform'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:26:41 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 5ms
+
+
+  
+NoMethodError (undefined method `attr_reader' for #<SendTweet:0x007feb14080528>):
+  
+app/services/send_tweet.rb:6:in `perform'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:26:58 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 198ms (Views: 193.7ms)
+
+
+Started POST "/home/index" for 127.0.0.1 at 2017-11-09 14:27:03 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/home/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:27:45 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:28:31 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 6ms
+
+
+  
+NameError (undefined local variable or method `log_in_twitter' for #<SendTweet:0x000000047bc0d8>
+Did you mean?  log_in_to_twitter):
+  
+app/services/send_tweet.rb:25:in `perform'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:28:46 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 7ms
+
+
+  
+NoMethodError (undefined method `new' for #<Twitter::REST::Client:0x007feb003580c0>):
+  
+app/services/send_tweet.rb:25:in `perform'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:28:57 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+
+  
+NoMethodError (undefined method `new' for #<Twitter::REST::Client:0x007feb0c9e0d78>):
+  
+app/services/send_tweet.rb:25:in `perform'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:29:18 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 5ms
+
+
+  
+NoMethodError (undefined method `new' for #<Twitter::REST::Client:0x007feb005a9720>):
+  
+app/services/send_tweet.rb:25:in `perform'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:29:33 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 22.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-09 14:35:25 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 263ms (Views: 254.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/index" for 127.0.0.1 at 2017-11-09 14:35:33 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/home/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-09 16:31:00 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 396ms (Views: 387.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/index" for 127.0.0.1 at 2017-11-09 16:31:17 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/home/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/home/index" for 127.0.0.1 at 2017-11-09 16:37:39 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+Started POST "/home/index" for 127.0.0.1 at 2017-11-09 16:37:41 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/home/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/home/index" for 127.0.0.1 at 2017-11-09 16:37:51 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/home/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/home/index" for 127.0.0.1 at 2017-11-09 16:42:32 +0100
+  
+NameError (undefined local variable or method `‘' for #<ActionDispatch::Routing::Mapper:0x00000003f97ad8>):
+  
+config/routes.rb:3:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-11-09 16:51:59 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- Twitter):
+  
+app/services/send_tweet.rb:1:in `<top (required)>'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-09 16:52:08 +0100
+Processing by HomeController#index as HTML
+Started GET "/" for 127.0.0.1 at 2017-11-09 16:52:18 +0100
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 240ms (Views: 236.1ms)
+
+
+Processing by HomeController#index as HTML
+Started GET "/" for 127.0.0.1 at 2017-11-09 16:52:18 +0100
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+  Rendering home/index.html.erb within layouts/application
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:3:in `new'
+app/controllers/home_controller.rb:3:in `index'
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 95ms (Views: 85.3ms)
+
+
+Started POST "/home/index" for 127.0.0.1 at 2017-11-09 16:52:25 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/home/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-09 17:59:28 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant TwitterBotController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:00:26 +0100
+  
+ActionController::RoutingError (uninitialized constant TwitterBotController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:00:43 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 239ms (Views: 237.3ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:00:47 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fqM4ccHQmMzDDczpOXDY6XZ7KhANtk9/5x0cz+UVL3jKHM8yM6Yb/2oEvuM/qzFoMEmShdtHLSlq1EQTd1qO5g==", "Contenu"=>"youyou", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 4ms
+
+
+  
+LoadError (cannot load such file -- Twitter):
+  
+app/services/send_tweet.rb:1:in `<top (required)>'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:05:05 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 240ms (Views: 232.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:05:11 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kgkUqV7qr3a/ZbySbx0TirAGtY+2w9Y6WomlX0Vc+DUmtuPqrJwsRRZszphpxvoL9jQNGmAytGzXQP2D1xNZqw==", "Contenu"=>"youyouu", "commit"=>"Envoyer"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: params_tweet):
+  
+app/controllers/home_controller.rb:13:in `params_tweet'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:06:17 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kgkUqV7qr3a/ZbySbx0TirAGtY+2w9Y6WomlX0Vc+DUmtuPqrJwsRRZszphpxvoL9jQNGmAytGzXQP2D1xNZqw==", "Contenu"=>"youyouu", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 7ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:6:in `new'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:07:22 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 25ms (Views: 23.9ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:07:26 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SPP+63Ja4PDVQig5HL3oBvDvqC5D63F+ngcTcaxRFP/8TAmogCxjw3xLWjMaZgGHtt0Qu5UaEygTzkutPh61YQ==", "Contenu"=>"youyouu", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 4ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:6:in `new'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:07:39 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 23ms (Views: 21.9ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:07:42 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H3J+KMo6/Pha5zcx3ns7ybm/QeP3ILfdh7B3boOPfrurzYlrOEx/y/PuRTvYoNJI/435diHR1YsKeS+yEcDfJQ==", "Contenu"=>"fghjikol", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 4ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:6:in `new'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:07:49 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 29ms (Views: 27.5ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:07:50 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZcSsjlh5X3zCJfoxV6YWIJ9HFMoy+9spdTM75YSL9UzRe1vNqg/cT2ssiDtRff+h2XWsX+QKuX/4+mM5FsRU0g==", "Contenu"=>"qsdfg", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 6ms
+
+
+  
+NameError (undefined local variable or method `tweet' for #<SendTweet:0x007f1281e92b28>):
+  
+app/services/send_tweet.rb:8:in `initialize'
+app/controllers/home_controller.rb:6:in `new'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:09:29 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 23ms (Views: 21.5ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:09:33 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QuoI24hdiz4FldlgbJTzJd0q40yM3iqPIrWww5VztPH2Vf+YeisIDaycq2pqTxqkmxhb2VovSNmvfOgfBzwVbw==", "Contenu"=>"youyou", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 5ms
+
+
+  
+LoadError (cannot load such file -- Twitter):
+  
+app/services/send_tweet.rb:1:in `<top (required)>'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:09:42 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 26ms (Views: 24.5ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:09:45 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KciM/CTiASrNHwchc/0uRV7RJRIMG0EzBtbQxLGhZhidd3u/1pSCGWQWdSt1JsfEGOOdh9rqI2WLH4gYI+7Hhg==", "Contenu"=>"youyoiu", "commit"=>"Envoyer"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 25ms (Views: 22.1ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:09:51 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4QiJBNw47H032iLPuq1n2ivA3QfTb2qRQMx3MDuKDVhVt35HLk5vTp7TUMW8do5bbfJlkgWeCMfNBS/sqcWsxg==", "Contenu"=>"youyouuu", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 1ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:6:in `new'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:13:05 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 22ms (Views: 20.6ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:13:06 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hHENfaSjvz57CSGLJ7VgIztMF1gZ0v2mwpyriQhdDUUwzvo+VtU8DdIAU4EhbomifX6vzc8jn/BPVfNVmhKs2w==", "Contenu"=>"youyouuu", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+SyntaxError (/home/youssef/Bureau/rails-tweet/app/services/send_tweet.rb:32: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/services/send_tweet.rb:32: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:13:10 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 22ms (Views: 20.9ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:13:14 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hX3M1PJlfMy3SCswovKC1AC1RiWYg4CoRTtSk0emruYxwjuXABP//x5BWTqkKWtVRof+sE5y4v7I8gpP1ekPeA==", "Contenu"=>"youyouuu", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:6:in `new'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:13:36 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hX3M1PJlfMy3SCswovKC1AC1RiWYg4CoRTtSk0emruYxwjuXABP//x5BWTqkKWtVRof+sE5y4v7I8gpP1ekPeA==", "Contenu"=>"youyouuu", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 2ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:6:in `new'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:17:49 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hX3M1PJlfMy3SCswovKC1AC1RiWYg4CoRTtSk0emruYxwjuXABP//x5BWTqkKWtVRof+sE5y4v7I8gpP1ekPeA==", "Contenu"=>"youyouuu", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 2ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:6:in `new'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:20:53 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hX3M1PJlfMy3SCswovKC1AC1RiWYg4CoRTtSk0emruYxwjuXABP//x5BWTqkKWtVRof+sE5y4v7I8gpP1ekPeA==", "Contenu"=>"youyouuu", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:6:in `new'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:24:04 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 240ms (Views: 231.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:24:11 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cma2C1LmRm6nAt+AFYC+FSHogl7lQ/lhukO2Zq5qKBfG2UFIoJDFXQ4LrYoTW1eUZ9o6yzOymzc3iu66PCWJiQ==", "Contenu"=>"youyou", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:6:in `new'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:28:44 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 47ms (Views: 45.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:31:47 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 26ms (Views: 24.5ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:34:49 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ASvuMT3EwalJl8EFlxzvDxukwXvqlUgC3xbeu5p5aTy1lBlyz7JCmuCesw+RxwaOXZZ57jxkKlRS34ZnCDbIog==", "Contenu"=>"youyou", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 4ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:6:in `new'
+app/controllers/home_controller.rb:6:in `send_tweet'
+Started GET "/" for 127.0.0.1 at 2017-11-09 18:36:33 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 23ms (Views: 22.2ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-11-09 18:36:35 +0100
+Processing by HomeController#send_tweet as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U8ei7B8NC7XcW/91Ouu5Lszt3AXQQfXU7Yx2n//m9YTneFWv7XuIhnVSjX88MFCvit9kkAawl4JgRS5DbalUGg==", "Contenu"=>"sdf", "commit"=>"Envoyer"}
+Completed 500 Internal Server Error in 4ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/services/send_tweet.rb:7:in `initialize'
+app/controllers/home_controller.rb:6:in `new'
+app/controllers/home_controller.rb:6:in `send_tweet'
